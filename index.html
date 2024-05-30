@@ -1,146 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <title>Base Apparel</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .attribution {
-        font-size: 1rem;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-      :root {
-        --softRed: hsl(0, 93%, 68%);
-        --deSaturatedRed: hsl(0, 36%, 70%);
-        --darkGrayishRed: hsl(0, 6%, 24%);
-        --firstLinear: linear-gradient(
-          135deg,
-          hsl(0, 0%, 100%),
-          hsl(0, 100%, 98%)
-        );
-        --secondLinear: linear-gradient(
-          135deg,
-          hsl(0, 80%, 86%),
-          hsl(0, 74%, 74%)
-        );
-      }
-      input:focus:invalid {
-        background: url("./images/icon-error.svg") no-repeat 100%;
-        border: 2px solid var(--softRed);      
-        border-radius: 2rem;
-      }
-      @media (min-width: 1024px) {
-        body {
-          background-repeat: no-repeat;
-          background-image: url(./images/bg-pattern-desktop.svg);
-        }
-        .attribution {
-          font-size: 1.5rem;
-        }
-        .container-fluid {
-          display: grid;
-          grid-template-columns: 1fr 2fr 1fr;
-          grid-template-rows: repeat(8, 1fr);
-        }
-        .nav {
-          grid-column: 1 / 3;
-          grid-row: 1 / 3;
-        }
-        .hero {
-          grid-column: 4 / 9;
-          grid-row: 1 / 9;
-        }
-        .main {
-          grid-column: 2 / 3;
-          grid-row: 3 / 9;
-        }
-      }
-    </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            screens: {
-              mobile: "375px",
-              desktop: "1440px",
-            },
-            colors: {
-              deSaturatedRed: "hsl(0, 36%, 70%)",
-              softRed: "hsl(0, 93%, 68%)",
-              darkGrayishRed: "hsl(0, 6%, 24%)",
-              firstLinear:
-                "linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))",
-              secondLinear:
-                "linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%))",
-
-              attribution: "hsl(228, 45%, 44%)",
-            },
-            fontFamily: {
-              primary: ["Josefin Sans", "sans-serif"],
-            },
-            fontSize: {
-              body: "16px",
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body class="font-primary text-deSaturatedRed flex flex-col justify-center items-center">
-    <main class="container-fluid w-[375px] lg:w-full lg:h-[100dvh] lg:text-left">
-      <nav class="p-3 m-5 nav lg:max-w-[34rem]">
-        <img src="./images/logo.svg" alt="Brand Logo"
-          class="w-2/5 lg:w-5/6 lg:max-w-[40rem] lg:px-[8rem] lg:mx-5" >
-      </nav>
-      <div class="hero">
-        <img class="lg:hidden" src="./images/hero-mobile.jpg" alt="Brand Model">
-        <img class="hidden lg:block lg:h-[100%]" src="./images/hero-desktop.jpg" alt="Brand Model">
-      </div>
-      <div class="lg:max-w-[34rem] main">
-        <section class="p-2 m-5 text-center lg:text-left">
-          <h1 class="text-4xl uppercase text-darkGrayishRed leading-[2.2rem] 
-          tracking-[.6rem] font-bold p-4 lg:text-7xl">
-          <span class="text-deSaturatedRed tracking-widest font-thin">We're</span><br >
-          coming soon
-          </h1>
-          <p class="text-deSaturatedRed text-sm pb-5 mx-3 tracking-tight lg:text-lg">
-            Hello fellow shoppers! We're currently building our new fashion
-            store. Add your email below to stay up-to-date with announcements
-            and our launch deals.
-          </p>
-          <div class="mb-4"></div>
-          <form action="#"
-            class="border-2 border-secondLinear rounded-full flex justify-between items-center 
-            focus:border-softRed lg:w-full">
-            <input id="input" type="email" placeholder="Email Address" required
-              class="w-5/6 py-2 px-3 placeholder:text-deSaturatedRed leading-tight focus:outline-none 
-              focus:shadow-outline focus:bg-white focus:text-black">
-            <button type="submit"
-              class="bg-gradient-to-r from-red-200 to-red-400 hover:from-red-100 hover:to-red-200
-              rounded-full px-6 py-3">
-              <img class="" src="./images/icon-arrow.svg" alt="Arrow Icon">
-            </button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+  <title>Base Apparel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="./images/logo.svg" alt="brand logo" class="logo">
+    </header>  
+    <div class="img-div">
+      <img src="./images/hero-mobile.jpg" alt="brand Modal" class="mobile-hero">
+      <img src="./images/hero-desktop.jpg" alt="brand Modal" class="desktop-hero">
+    </div>  
+    <div class="text-div">
+        <div>
+            <h1><span>we're</span> coming soon</h1>
+            <p>
+                Hello fellow shoppers! We're currently building our new fashion store. 
+                Add your email below to stay up-to-date with announcements and our launch deals.        
+            </p>      
+        </div>
+        <form name="email" action="#">
+            <input type="email" placeholder="Email Address" id="email" required oninvalid="this.setCustomValidity(' ')">
+            <img id="errorSign" src="./images/icon-error.svg" alt="error sign">
+            <button id="submit" class="btn"><img class="arrow" src="./images/icon-arrow.svg" alt="arrow"></button>
+            <div id="errorMessage">Please provide a valid email</div>
           </form>
-        </section>
-      </div>
-    </main>
-    <footer class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-        Frontend Mentor</a>
-      <br>
-      Coded by <a href="https://www.frontendmentor.io/profile/Ganesh-G0" target="_blank">
-        Ganesh</a>
-    </footer>
-  </body>
+    </div>  
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $("#errorSign").hide();
+    $("#errorMessage").hide();
+    $("#submit").click(() => { 
+      console.log(isEmail($("#email").val()));
+      if (isEmail($("#email").val())) {
+        $("#errorSign").hide(); 
+        $("#errorMessage").hide();
+        alert("Thanks for signing Up!");
+      } else {
+        $("#errorSign").show(); 
+        $("#errorMessage").show();
+      }
+    });
+    function isEmail(email) {
+      var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if (!regex.test(email)) { return false; } 
+      else { return true; }
+    }
+  </script>
+</body>
 </html>
