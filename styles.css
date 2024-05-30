@@ -45,7 +45,7 @@ body {
 /* -----------------------------------main */
 main {
     width: 100%;
-    max-width: 375px;    
+    max-width: 475px;    
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:     
@@ -63,6 +63,10 @@ header { grid-area: logo; }
     max-width: 12rem;
 }
 /* ----------------------desktop img */
+.mobile-hero {
+    width: 100%;
+    /* border: 1px solid red; */
+}
 .desktop-hero { display: none; }
 /* ----------------------text-div */
 .text-div {
@@ -90,6 +94,7 @@ header { grid-area: logo; }
     font-size: 1.5rem;
     color: var(--de-saturated-red);
 }
+
 /* ---------------------------------------form */
 form {
     /* width: 90%; */
@@ -141,6 +146,14 @@ input:-webkit-autofill:active {
     color: var(--soft-red);
     margin-inline-start: 2rem;
 }
+@media(min-width: 450px) {
+    .text-div > div > h1 {
+        font-size: 5rem;
+    }
+    .text-div > div > p {
+        font-size: 1.9rem;
+    }
+}
 @media (min-width: 1024px) {
     .desktop-hero { 
         display: block; 
@@ -175,13 +188,10 @@ input:-webkit-autofill:active {
         text-align: left;
         max-width: 410px;
     }
-    .text-div > div h1 {
+    .text-div > div > h1 {
         font-size: 6rem;
-    }
-    .text-div > div p {
-        font-size: 1.52rem;
     }
     form {
         width: 80%;
-    }
+    }    
 }
